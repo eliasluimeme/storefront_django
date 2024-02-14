@@ -12,3 +12,10 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(models.Collection)
 # admin.site.register(models.Product)
 admin.site.register(models.Promotion)
+
+@admin.register(models.Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ['first_name', 'last_name', 'membership']
+    list_editable = ['membership']
+    list_per_page = 10
+    search_fields = ['first_name', 'last_name']
